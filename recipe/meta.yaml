@@ -1,5 +1,5 @@
 {% set name = "ipfshttpclient" %}
-{% set version = "0.6.1" %}
+{% set version = "0.7.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fb2b12b249dd45c4110b946a16c03ec1eeba6789791bd425e678d93c3f631098
+  sha256: feb1033c14c3ac87ee81264176c5beefeaf386385804427160466117ccc43693
 
 build:
-  number: 1 
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
