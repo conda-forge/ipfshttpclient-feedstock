@@ -1,5 +1,5 @@
 {% set name = "ipfshttpclient" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0a2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: feb1033c14c3ac87ee81264176c5beefeaf386385804427160466117ccc43693
+  sha256: 0d80e95ee60b02c7d414e79bf81a36fc3c8fbab74265475c52f70b2620812135
 
 build:
   number: 0
@@ -18,18 +18,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python >=3.6
     - flit-core >=2,<4
     - multiaddr >=0.0.7
     - requests >=2.11
-    - urllib3 >=1.24,<2.0
-    - httpx >=0.10.1,<1.0.0
   run:
+    - python >=3.6
     - multiaddr >=0.0.7
-    - python >=3.5
     - requests >=2.11
-    - urllib3 >=1.24,<2.0
-    - httpx >=0.10.1,<1.0.0
 
 test:
   imports:
