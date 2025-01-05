@@ -7,18 +7,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: feb1033c14c3ac87ee81264176c5beefeaf386385804427160466117ccc43693
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
     - flit-core >=2,<4
     - multiaddr >=0.0.7
     - requests >=2.11
@@ -26,7 +26,7 @@ requirements:
     - httpx >=0.10.1,<1.0.0
   run:
     - multiaddr >=0.0.7
-    - python >=3.5
+    - python >={{ python_min }}
     - requests >=2.11
     - urllib3 >=1.24,<2.0
     - httpx >=0.10.1,<1.0.0
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://ipfs.io/ipns/12D3KooWEqnTdgqHnkkwarSrJjeMP2ZJiADWLYADaNvUb6SQNyPF/
